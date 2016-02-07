@@ -26,11 +26,8 @@ public final class JniUtils {
     public static boolean mHaveGestureLib = false;
     static {
         try {
-            System.loadLibrary(JniLibName.JNI_LIB_NAME2);
+            System.loadLibrary(JniLibName.JNI_LIB_NAME);
             mHaveGestureLib = true;
-        } catch (UnsatisfiedLinkError ue) {
-            try {
-                System.loadLibrary(JniLibName.JNI_LIB_NAME);
             } catch (UnsatisfiedLinkError ule) {
                 Log.e(TAG, "Could not load native library " + JniLibName.JNI_LIB_NAME, ule);
             }
